@@ -126,3 +126,4 @@ This is an educational project, not a production forensics tool. It doesn't hand
 ## License
 
 MIT — see [LICENSE](LICENSE).
+# forensics-toolkit
