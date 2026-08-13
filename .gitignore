@@ -1,0 +1,19 @@
+# Compiled C binaries
+src/hasher
+src/timeline
+*.o
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated reports (these are output, not source)
+*.csv
+*.json
+forensics_report/
+report/
+
+# OS
+.DS_Store
