@@ -72,7 +72,7 @@ Only analyze files and logs you have permission to access.
 - Create interactive timelines.
 - Detect file types using file signatures.
 - Support web server logs.
-
+*Done by Michael hell ye*
 ## License
 
 MIT License.
