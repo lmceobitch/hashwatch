@@ -1,20 +1,3 @@
-"""
-forensics.py - Main CLI for the Digital Forensics Toolkit
-
-Ties together the C components (hasher, timeline) and the Python
-components (metadata_extractor, log_analyzer) into a single command.
-
-Usage:
-    python3 forensics.py hash <file_or_dir> [output.csv]
-    python3 forensics.py timeline <dir> [output.csv]
-    python3 forensics.py metadata <file_or_dir> [--output report.json]
-    python3 forensics.py logs <logfile> [--threshold 5] [--output report.json]
-    python3 forensics.py full <target_dir> [--outdir ./report]
-
-The C binaries (hasher, timeline) must be compiled first:
-    cd ../src && make
-"""
-
 import argparse
 import os
 import subprocess
@@ -28,7 +11,6 @@ BIN_DIR = os.path.join(SCRIPT_DIR, "..", "src")
 
 
 def run_c_binary(name, args):
-    """Runs a compiled C binary from the src/ directory."""
     binary_path = os.path.join(BIN_DIR, name)
     if not os.path.exists(binary_path):
         print(f"Error: {name} not found at {binary_path}. "
@@ -80,8 +62,6 @@ def cmd_logs(args):
 
 
 def cmd_full(args):
-    """Runs every module against a target directory and collects output
-    into a single report folder - a full sweep."""
     os.makedirs(args.outdir, exist_ok=True)
 
     print("=== Step 1/3: Hashing files (chain of custody) ===")
@@ -108,7 +88,6 @@ def cmd_full(args):
 
 
 def run_c_binary_noexit(name, args):
-    """Like run_c_binary but doesn't exit the whole process - used by 'full'."""
     binary_path = os.path.join(BIN_DIR, name)
     if not os.path.exists(binary_path):
         print(f"Error: {name} not found at {binary_path}. Build with 'make' in src/.",
