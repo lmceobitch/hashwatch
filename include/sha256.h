@@ -1,4 +1,5 @@
 /*
+ * I made this file with AI cause wtf I'm not Terry Davis sorry
  * sha256.h - Minimal, self-contained SHA-256 implementation
  *
  * Public domain style implementation, adapted for this toolkit so the
